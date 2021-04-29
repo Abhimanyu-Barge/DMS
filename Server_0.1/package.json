@@ -1,0 +1,47 @@
+{
+  "name": "NodeAngularTemplateServerProject",
+  "version": "0.0.0",
+  "description": "Abhimanyu Template Project",
+  "private": true,
+  "scripts": {
+    "start": "nodemon --harmony app.js"
+  },
+  "dependencies": {
+    "catbox": "7.1.2",
+    "check-type": "^0.4.11",
+    "co": "4.6.0",
+    "co-mysql": "~1.0.0",
+    "firebase-admin": "^8.8.0",
+    "good": "7.0.1",
+    "good-console": "6.1.2",
+    "good-squeeze": "4.0.0",
+    "hapi": "14.2.0",
+    "hapi-auth-jwt2": "7.1.2",
+    "hapi-rbac": "2.2.0",
+    "hapi-router": "3.5.0",
+    "inert": "4.0.1",
+    "joi": "9.0.4",
+    "kerberos": "0.0.21",
+    "lout": "9.1.0",
+    "mongodb": "2.2.7",
+    "mysql": "~2.10.2",
+    "nconf": "0.8.4",
+    "node-cache": "3.2.1",
+    "nodemon": "^1.10.2",
+    "ratify": "2.1.0",
+    "thunkify-mongodb": "0.2.1",
+    "vision": "4.1.0",
+    "winston": "2.2.0"
+  },
+  "devDependencies": {
+    "mocha-co": "1.17.1-co.1",
+    "chai": "3.5.0",
+    "istanbul": "0.4.5",
+    "benchmark": "2.1.1",
+    "supertest": "2.0.0",
+    "lodash": "4.15.0",
+    "bcryptjs": "2.3.0",
+    "moment": "2.14.1",
+    "notp": "2.0.3"
+  }
+}

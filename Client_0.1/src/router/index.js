@@ -1,12 +1,14 @@
 import Vue from 'vue'
 import Router from 'vue-router'
 import BasicLogin from '@/components/BasicLogin'
+import Temp from '@/components/pages/Tempview.vue'
+
 import Applayout from '@/common/AppLayout'
 import Grid from '@/components/Grid'
 import BottomNav from '@/components/NevigationBottom'
 import Conversational from '@/components/Chatbot'
 import CreateUser from '@/components/adminView/CreateUser'
-import CustomerList from '@/components/adminView/UserList'
+import UserList from '@/components/adminView/UserList'
 import Profile from '@/components/adminView/Profile'
 import Dashboard from '@/components/adminView/Dashboard'
 import CollectionDetails from '@/components/adminView/CollectionDetails'
@@ -48,9 +50,9 @@ export default new Router({
         component: CreateUser
       },
       {
-        path: '/customerlist',
-        name: 'CustomerList',
-        component: CustomerList
+        path: '/userList',
+        name: 'userList',
+        component: UserList
       },
       {
         path: '/rateChart',
@@ -72,6 +74,11 @@ export default new Router({
       path: '/Login',
       name: 'loginScreen',
       component: BasicLogin
+    },
+    {
+      path: '/temp',
+      name: 'temp',
+      component: Temp
     },
     {
       path: '/profile',
@@ -96,6 +103,6 @@ export default new Router({
   {
       path: '/',
       redirect: '/Login'
-  }
+  },
   ]
 })

@@ -45,8 +45,7 @@ export default {
   },
   methods: {
     LoginUser () {
-    axios
-        .post('/login',this.login)
+    axios.post('/login',this.login)
         .then(response => {
           if(response.status == 200 && response.data.text == true){
             sessionStorage.setItem('authorization',response.headers.authorization);

@@ -4,7 +4,7 @@ import Vue from 'vue'
 import App from './App'
 import router from './router'
 import Vuetify from 'vuetify'
-import '../node_modules/vuetify/dist/vuetify.min.css'
+
 import Toasted from 'vue-toasted'
 import { store } from '../store/store'
 import Popover from 'vue-js-popover'
@@ -14,14 +14,22 @@ import Raphael from 'raphael/raphael'
 import axios from 'axios'
 import VueAxios from 'vue-axios'
 import VueJWT from 'vuejs-jwt'
-
 import AirbnbStyleDatepicker from 'vue-airbnb-style-datepicker'
+import '../node_modules/vuetify/dist/vuetify.min.css'
 import 'vue-airbnb-style-datepicker/dist/vue-airbnb-style-datepicker.min.css'
+// seimport { BootstrapVue, IconsPlugin } from 'bootstrap-vue'
+import { BootstrapVue, IconsPlugin } from 'bootstrap-vue'
+// Import Bootstrap an BootstrapVue CSS files (order is important)
+import 'bootstrap/dist/css/bootstrap.css'
+import 'bootstrap-vue/dist/bootstrap-vue.css'
 
-// see docs for available options
+// Make BootstrapVue available throughout your project
+Vue.use(BootstrapVue)
+// Optionally install the BootstrapVue icon components plugin
+Vue.use(IconsPlugin)
+
+
 const datepickerOptions = {}
-
-
 global.Raphael = Raphael
 export const bus = new Vue();
 Vue.use(VueJWT);
@@ -125,6 +133,7 @@ router.beforeEach((to, from, next) => {
      } else {
        next()
      }
+    next()
   }
 })
 

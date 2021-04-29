@@ -78,7 +78,7 @@ export default {
     name: 'Profile',
     methods: {
         backTo () {
-            this.$router.push('/customerList')
+            this.$router.push('/UserList')
         }
     },
     components: {

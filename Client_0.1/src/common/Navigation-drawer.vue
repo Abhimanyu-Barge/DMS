@@ -91,7 +91,7 @@ export default {
         {
           icons: "account_circle",
           title: "User List ",
-          redirectTo: "customerList"
+          redirectTo: "UserList"
         },
           {
           icons: "event",

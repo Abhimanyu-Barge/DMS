@@ -3,13 +3,17 @@
         <v-container fluid class="px-3">
             <v-layout row wrap>
                 <v-flex xs12>
-                    <v-text-field v-model="customer.userName" label="Enter full Name" :error-messages="errors.collect('name')" v-validate="'required'" data-vv-name="name" required></v-text-field>
-                    <v-text-field v-model="customer.mobileNumber" label="Enter Phone Number" :error-messages="errors.collect('mobile')" v-validate="'required|max:10|numeric'" data-vv-name="mobile" :counter="10" required></v-text-field>
-                    <v-text-field v-model="customer.accountNumber" label="Enter Account Number" :error-messages="errors.collect('accountno')" v-validate="'required|max:16|min:11|numeric'" data-vv-name="accountno" :counter="16" required></v-text-field>
-                    <v-text-field v-model="customer.ifscCode" label="Enter IFSC Code" :error-messages="errors.collect('ifsc')" v-validate="{required:true,regex: '^[A-Za-z]{4}0[A-Z0-9a-z]{6}$'}" data-vv-name="ifsc" required></v-text-field>
-                    <v-text-field v-model="customer.aadhaarNO" label="Enter aadhar Number " :error-messages="errors.collect('aadhar')" v-validate="'required|numeric'" data-vv-name="aadhar" :counter="12" v-on:blur="validateAdhar()" required></v-text-field>
-                    <v-text-field v-model="customer.email" label="E-mail" :error-messages="errors.collect('email')" v-validate="'email'" data-vv-name="email"></v-text-field>
-                    <v-btn @click="submit">Create New  User</v-btn>
+                    <v-text-field v-model="customer.customerNameEn" label="Enter full Name" :error-messages="errors.collect('name')" v-validate="'required'" data-vv-name="name" required></v-text-field>
+                    <v-text-field v-model="customer.mobileNumber" label="Enter Mobile Number" :error-messages="errors.collect('mobile')" v-validate="'required|max:10|numeric'" data-vv-name="mobile" :counter="10" required></v-text-field>
+                     
+                     <v-text-field v-model="customer.coustomerAddress" label="Enter Coustomer Address" :error-messages="errors.collect('coustomerAddress')" v-validate="'required'" data-vv-name="coustomerAddress" required></v-text-field>
+
+                    <v-text-field v-model="customer.acountNo" label="Enter Account Number" :error-messages="errors.collect('accountno')" v-validate="'required|max:16|min:11|numeric'" data-vv-name="accountno" :counter="16" required></v-text-field>
+                    <v-text-field v-model="customer.ifc" label="Enter IFSC Code" :error-messages="errors.collect('ifsc')" v-validate="{required:true,regex: '^[A-Za-z]{4}0[A-Z0-9a-z]{6}$'}" data-vv-name="ifsc" required></v-text-field>
+                    <v-text-field v-model="customer.branch" label="Enter branch Name" :error-messages="errors.collect('branch')" v-validate="'required'" data-vv-name="branch" required></v-text-field>
+                    <v-text-field v-model="customer.aadhaarNO" label="Enter aadhar Number " :error-messages="errors.collect('aadhar')" v-validate="'numeric'" data-vv-name="aadhar" :counter="12" v-on:blur="validateAdhar()" required></v-text-field>
+                    <!-- <v-text-field v-model="customer.email" label="E-mail" :error-messages="errors.collect('email')" v-validate="'email'" data-vv-name="email"></v-text-field> -->
+                    <v-btn block large color="info" @click="submit" >Create New  User</v-btn>
                 </v-flex>
             </v-layout>
         </v-container>
@@ -47,34 +51,30 @@ export default {
           select: {
             required: "Select field is required "
           },
-
           mobile: {
             required: "mobile number field is required",
-
             max: "The mobile number field may not be greater than 10 digit",
-
             numeric: "Please enter Number only."
           },
-
           accountno: {
-              numeric: "Please enter Number only.",
+            numeric: "Please enter Number only.",
             required: "Account number field is required",
-
             max: "The Account number field may not be greater than 16 digit",
-
             min: "The Account number field may not be less than 11 digit"
-
-
           },
-
           ifsc: {
             required: "IFSC Code is required",
-
             regex: "Invalid IFSC Code"
           },
           aadhar: {
             required: "Please Enter Valid Aadhar number ",
             max: "The Aadhar number field may not be greater than 12 digit"
+          },
+          branch: {
+            required: "Branch name required "
+          },
+           coustomerAddress: {
+            required: "Coustomer Address  required "
           }
         }
       }
@@ -100,8 +100,9 @@ export default {
     }).catch(e => {
       this.errors.push(e)
     })
+
     }
-      })
+  })
     },
     validateAdhar() {
         if(this.aadhaarNO != null){
