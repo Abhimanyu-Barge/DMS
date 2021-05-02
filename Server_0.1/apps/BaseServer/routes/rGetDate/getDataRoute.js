@@ -69,16 +69,17 @@ let getTotalCoustomer = {
     handler: function(request, reply) {
         co(function* () {
             try {
-                console.log(request.auth.credentials);
-                console.log(request.payload);
-
+                // console.log(request.auth.credentials);
+                // console.log(request.payload);
                 let requestStatus = {
                     status : false
                 };
                 let db = yield coDal.getNoSqlDB();
+                // haldle exception 
                 let coustomers = yield db.UserMaster.find({}).toArray();
-                 requestStatus.status = true;
-                 requestStatus.coustomers = coustomers;
+                requestStatus.status = true;
+                requestStatus.coustomers = coustomers;
+                
                 reply(requestStatus);
             }catch (e) {
                 console.error(e.stack);

@@ -33,9 +33,8 @@
 </template>
 <script>
   import axios from 'axios'
-  import VueJWT from 'vuejs-jwt'
-  import '../../static/css/util.css'
-  import '../../static/css/main.css'
+  import '../../../static/css/util.css'
+  import '../../../static/css/main.css'
 export default {
   name: 'loginScreen',
   data () {

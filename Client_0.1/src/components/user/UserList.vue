@@ -32,14 +32,13 @@
           <v-container>
             <v-layout row wrap>
                 <v-flex xs12>
-                    <v-text-field v-model="customer.customerNameEn" label=" Full Name" :error-messages="errors.collect('name')" v-validate="'required'" data-vv-name="name" required></v-text-field>
-                    <v-text-field v-model="customer.mobileNumber" label=" Mobile Number" :error-messages="errors.collect('mobile')" v-validate="'max:10|numeric'" data-vv-name="mobile" :counter="10" required></v-text-field>
-                    <v-text-field v-model="customer.coustomerAddress" label="Coustomer Address" :error-messages="errors.collect('coustomerAddress')" v-validate="'required'" data-vv-name="coustomerAddress" required></v-text-field>
-
-                    <v-text-field v-model="customer.acountNo" label=" Account Number" :error-messages="errors.collect('accountno')" v-validate="'required|max:16|min:11|numeric'" data-vv-name="accountno" :counter="16" required></v-text-field>
-                    <v-text-field v-model="customer.ifc" label=" IFSC Code" :error-messages="errors.collect('ifsc')" v-validate="{required:true,regex: '^[A-Za-z]{4}0[A-Z0-9a-z]{6}$'}" data-vv-name="ifsc" required></v-text-field>
-                    <v-text-field v-model="customer.branch" label=" Branch Name" :error-messages="errors.collect('branch')" v-validate="'required'" data-vv-name="branch" required></v-text-field>
-                    <v-text-field v-model="customer.aadhaarNO" label=" Aadhar Number " :error-messages="errors.collect('aadhar')" v-validate="'numeric'" data-vv-name="aadhar" :counter="12" v-on:blur="validateAdhar()" required></v-text-field>
+                    <v-text-field v-model="seletedCustomer.customerNameEn" label=" Full Name" :error-messages="errors.collect('name')" v-validate="'required'" data-vv-name="name" required></v-text-field>
+                    <v-text-field v-model="seletedCustomer.mobileNumber" label=" Mobile Number" :error-messages="errors.collect('mobile')" v-validate="'max:10|numeric'" data-vv-name="mobile" :counter="10" required></v-text-field>
+                    <v-text-field v-model="seletedCustomer.coustomerAddress" label="Coustomer Address" :error-messages="errors.collect('coustomerAddress')" v-validate="'required'" data-vv-name="coustomerAddress" required></v-text-field>
+                    <v-text-field v-model="seletedCustomer.acountNo" label=" Account Number" :error-messages="errors.collect('accountno')" v-validate="'required|max:16|min:11|numeric'" data-vv-name="accountno" :counter="16" required></v-text-field>
+                    <v-text-field v-model="seletedCustomer.ifc" label=" IFSC Code" :error-messages="errors.collect('ifsc')" v-validate="{required:true,regex: '^[A-Za-z]{4}0[A-Z0-9a-z]{6}$'}" data-vv-name="ifsc" required></v-text-field>
+                    <v-text-field v-model="seletedCustomer.branch" label=" Branch Name" :error-messages="errors.collect('branch')" v-validate="'required'" data-vv-name="branch" required></v-text-field>
+                    <v-text-field v-model="seletedCustomer.aadhaarNO" label=" Aadhar Number " :error-messages="errors.collect('aadhar')" v-validate="'numeric'" data-vv-name="aadhar" :counter="12" v-on:blur="validateAdhar()" required></v-text-field>
                     <!-- <v-text-field v-model="customer.email" label="E-mail" :error-messages="errors.collect('email')" v-validate="'email'" data-vv-name="email"></v-text-field> -->
                     <!-- <v-btn block large color="info" @click="submit" >Create New  User</v-btn> -->
                 </v-flex>
@@ -65,6 +64,7 @@ export default {
     return {
       id:"Coustomer Id :",
        customer: {},
+       seletedCustomer:{},
        responseData:[],
        dialog: false,
        dictionary: {
@@ -109,22 +109,22 @@ export default {
     },
     created(){
       this.$validator.localize("en", this.dictionary);
-      this.patchUserList()
+      this.getAllUserList()
     },
     methods: {
       closeDialog(){
         this.dialog = false
-        this.customer = {}
+        this.seletedCustomer = {}
+        this.getAllUserList()
       },
       updateCoustomerDetails(){
-        console.log("update Coustomer details ")
         this.$validator.validateAll().then((result) => {
         if(result == true){
-          axios.post('/updateCoustomer', this.customer) .then(response => {
+          axios.post('/updateCoustomer', this.seletedCustomer) .then(response => {
            if(response.status == 200  && response.data.status == true){
-                this.responseData = response.data.coustomers
-                this.customer = {}
+                this.seletedCustomer = {}
                 this.dialog = false
+                this.getAllUserList()
             }else{
               this.$toasted.error(response.data.reason, {
               position: "top-center",
@@ -140,9 +140,8 @@ export default {
         })       
           }
         })
-        console.log(this.customer)
       },
-  patchUserList(){
+  getAllUserList(){
     axios.post('/getTotalCoustomer') .then(response => {
            if(response.status == 200  && response.data.status == true){
                 this.responseData = response.data.coustomers
@@ -162,7 +161,7 @@ export default {
         
         },
         redirectToUser (data) {
-          this.customer = data
+          this.seletedCustomer = data
           this.dialog = true
         }
     }

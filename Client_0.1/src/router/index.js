@@ -1,19 +1,19 @@
 import Vue from 'vue'
 import Router from 'vue-router'
-import BasicLogin from '@/components/BasicLogin'
 import Applayout from '@/common/AppLayout'
-import Grid from '@/components/Grid'
-import BottomNav from '@/components/NevigationBottom'
-import Conversational from '@/components/Chatbot'
-import CreateUser from '@/components/adminView/CreateUser'
-import UserList from '@/components/adminView/UserList'
-import Profile from '@/components/adminView/Profile'
-import Dashboard from '@/components/adminView/Dashboard'
-import CollectionDetails from '@/components/adminView/CollectionDetails'
-import Ratechart from '@/components/adminView/RateChart'
-import ReportView from'@/components/adminView/ReportView'
-import createReport from '@/components/pages/CreateReport'
-import event from '@/components/event'
+// Login page 
+import BasicLogin from '@/components/login/BasicLogin'
+// Dashboard 
+import Dashboard from '@/components/dashboard/Dashboard'
+
+// User 
+import CreateUser from '@/components/user/CreateUser'
+import UserList from '@/components/user/UserList'
+
+// Report Section 
+import ReportView from'@/components/report/ReportView'
+import createReport from '@/components/report/CreateReport'
+// import event from '@/components/event'
 
 Vue.use(Router)
 export default new Router({
@@ -28,21 +28,6 @@ export default new Router({
         component: Dashboard
       },
       {
-        path: '/grid',
-        name: 'Grid',
-        component: Grid
-      },
-      {
-        path: '/bottomnav',
-        name: 'BottomNav',
-        component: BottomNav
-      },
-      {
-        path: '/Conversational_form',
-        name: 'Chatbot',
-        component: Conversational
-      },
-      {
         path: '/create_user',
         name: 'CreateUser',
         component: CreateUser
@@ -51,11 +36,6 @@ export default new Router({
         path: '/userList',
         name: 'userList',
         component: UserList
-      },
-      {
-        path: '/rateChart',
-        name: 'RateChart',
-        component: Ratechart
       },
       {
         path:'/ReportView',
@@ -72,22 +52,6 @@ export default new Router({
       path: '/Login',
       name: 'loginScreen',
       component: BasicLogin
-    },
-    {
-      path: '/profile',
-      name: 'Profile',
-      component: Profile
-    },
-    {
-      path: '/collectionDetails',
-      name: 'CollectionDetails',
-      component: CollectionDetails
-    },
-    {
-         path:'/event',
-         name:'event',
-         component:event,
-         isOpenUrl:true
     },
     {
       path: '*',

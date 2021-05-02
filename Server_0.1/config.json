@@ -10,7 +10,7 @@
     },
     "user.email": "Please enter valid email address",
     "environment": "development",
-    "port": 8003,
+    "port": 8004,
     "host": "localhost",
     "jwtSecretKey": "secret",
     "applicationVersion": "app1"
