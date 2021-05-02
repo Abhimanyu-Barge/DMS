@@ -1,8 +1,6 @@
 import Vue from 'vue'
 import Router from 'vue-router'
 import BasicLogin from '@/components/BasicLogin'
-import Temp from '@/components/pages/Tempview.vue'
-
 import Applayout from '@/common/AppLayout'
 import Grid from '@/components/Grid'
 import BottomNav from '@/components/NevigationBottom'
@@ -74,11 +72,6 @@ export default new Router({
       path: '/Login',
       name: 'loginScreen',
       component: BasicLogin
-    },
-    {
-      path: '/temp',
-      name: 'temp',
-      component: Temp
     },
     {
       path: '/profile',
