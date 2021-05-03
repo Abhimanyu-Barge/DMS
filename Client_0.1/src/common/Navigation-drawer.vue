@@ -39,9 +39,9 @@
         <v-icon>{{item.icons}}</v-icon> <span> &nbsp; &nbsp; &nbsp; &nbsp; {{item.title}}</span> 
       </div>
       <v-card>
- <v-divider inset></v-divider>
+        
         <v-card-text>
-          <div v-for="(item) in item.child ">
+          <div v-for="(item) in item.child">
             <v-list-tile v-if="item.icons" :key="item.title" @click="redirectTo(item)"  ripple shift>
               <v-list-tile-action>
                 <v-icon>{{ item.icons }}</v-icon>
@@ -83,7 +83,17 @@ export default {
           title: "Dashboard",
           redirectTo: "dashboard"
         },
+         {
+           icons:"play_for_work",
+           title:"Colllection",
+           redirectTo:"/colllection"
+         },
         {
+          icons: "account_circle",
+          title: "User",
+          groupBtn: true,
+          child: [
+           {
           icons: "person_add",
           title: "Create User",
           redirectTo: "create_user"
@@ -92,33 +102,13 @@ export default {
           icons: "account_circle",
           title: "User List ",
           redirectTo: "UserList"
-        },
-          {
+        }
+        ]
+        }, 
+        {
           icons: "event",
           title: "Report ",
           redirectTo: "ReportView"
-        },
-        {
-          icons: "child_friendly",
-          title: "Product",
-          groupBtn: true,
-          child: [
-            {
-          icons: "add",
-          title: "Add New Product",
-          redirectTo: "create_user"
-        },
-        {
-          icons: "create",
-          title: "Update Product ",
-          redirectTo: "customerList"
-        },
-        {
-          icons: "format_align_justify",
-          title: "View Product Details ",
-          redirectTo: "customerList"
-        }
-          ]
         },
         {
           icons: "remove_circle",

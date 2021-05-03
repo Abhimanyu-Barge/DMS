@@ -5,10 +5,14 @@ import Applayout from '@/common/AppLayout'
 import BasicLogin from '@/components/login/BasicLogin'
 // Dashboard 
 import Dashboard from '@/components/dashboard/Dashboard'
+// Collection page 
+import collection  from '@/components/collection/collection'
 
 // User 
 import CreateUser from '@/components/user/CreateUser'
 import UserList from '@/components/user/UserList'
+
+
 
 // Report Section 
 import ReportView from'@/components/report/ReportView'
@@ -26,6 +30,11 @@ export default new Router({
         path: '/dashboard',
         name: 'Dashboard',
         component: Dashboard
+      },
+      {
+        path:"/collection",
+        name:collection,
+        component:collection
       },
       {
         path: '/create_user',

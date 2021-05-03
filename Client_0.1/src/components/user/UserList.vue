@@ -10,7 +10,7 @@
                 <img src="/static/doc-images/lists/1.png">
               </v-list-tile-avatar>
                <!-- content section -->
-              <v-list-tile-content>
+              <v-list-tile-content >
                 <v-list-tile-title v-html="item.customerNameEn"></v-list-tile-title>
                 <v-list-tile-sub-title v-html="id+item.customerId"></v-list-tile-sub-title>
               </v-list-tile-content>
@@ -45,9 +45,9 @@
             </v-layout>
           </v-container>
         </v-card-text>
-        <v-card-actions>
+        <v-card-actions >
           <v-spacer></v-spacer>
-          <v-btn color="blue darken-1" text  @click="closeDialog"> Close  </v-btn>
+          <v-btn color="blue darken-1" text   @click="closeDialog"> Close  </v-btn>
           <v-btn color="blue darken-1" text @click="updateCoustomerDetails "> Update  </v-btn>
         </v-card-actions>
       </v-card>

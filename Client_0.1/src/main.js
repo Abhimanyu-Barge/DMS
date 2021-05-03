@@ -15,20 +15,8 @@ import axios from 'axios'
 import VueAxios from 'vue-axios'
 import VueJWT from 'vuejs-jwt'
 import AirbnbStyleDatepicker from 'vue-airbnb-style-datepicker'
-import '../node_modules/vuetify/dist/vuetify.min.css'
 import 'vue-airbnb-style-datepicker/dist/vue-airbnb-style-datepicker.min.css'
-// seimport { BootstrapVue, IconsPlugin } from 'bootstrap-vue'
-import { BootstrapVue, IconsPlugin } from 'bootstrap-vue'
-// Import Bootstrap an BootstrapVue CSS files (order is important)
-import 'bootstrap/dist/css/bootstrap.css'
-import 'bootstrap-vue/dist/bootstrap-vue.css'
-
-// Make BootstrapVue available throughout your project
-Vue.use(BootstrapVue)
-// Optionally install the BootstrapVue icon components plugin
-Vue.use(IconsPlugin)
-
-
+import '../node_modules/vuetify/dist/vuetify.min.css'
 const datepickerOptions = {}
 global.Raphael = Raphael
 export const bus = new Vue();
