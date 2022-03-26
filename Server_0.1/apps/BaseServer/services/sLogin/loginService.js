@@ -11,6 +11,7 @@ exports.validateUser =  co.wrap(function*(user) {
     try {
         let db = yield coDal.getNoSqlDB();
         let dbUser = yield db.organization.findOne({"userName": user.userName, "password": user.password},{"password":0});
+        console.log(dbUser)
         if (dbUser != null) {
             return dbUser;
         } else {
