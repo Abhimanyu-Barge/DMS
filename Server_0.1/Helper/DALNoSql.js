@@ -43,7 +43,6 @@ exports.getNoSqlDB = co.wrap(function* () {
 
             loggerHelper.info("Connected to DB server !");
             db = yield schemaMapper.registerSchemas(db);
-
             dbConnected = true;
 
         } catch (er) {
