@@ -86,7 +86,7 @@ export default {
          {
            icons:"play_for_work",
            title:"Colllection",
-           redirectTo:"/colllection"
+           redirectTo:"/collection"
          },
         {
           icons: "account_circle",

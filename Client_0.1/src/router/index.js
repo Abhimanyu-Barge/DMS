@@ -6,7 +6,7 @@ import BasicLogin from '@/components/login/BasicLogin'
 // Dashboard 
 import Dashboard from '@/components/dashboard/Dashboard'
 // Collection page 
-import collection  from '@/components/collection/collection'
+import collection  from '@/components/collection/Collection'
 
 // User 
 import CreateUser from '@/components/user/CreateUser'
@@ -33,7 +33,7 @@ export default new Router({
       },
       {
         path:"/collection",
-        name:collection,
+        name:"Collection",
         component:collection
       },
       {
