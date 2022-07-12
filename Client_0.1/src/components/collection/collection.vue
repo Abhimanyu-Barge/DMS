@@ -44,15 +44,18 @@
         <v-text-field
             label="Fat"
             outlined
-          ></v-text-field>
-          <v-text-field
-            label="SNF"
-            outlined
-          ></v-text-field>
+          >
+          </v-text-field>
            <v-text-field
             label="Degree"
             outlined
           ></v-text-field>
+          
+          <v-text-field
+            label="SNF"
+            outlined
+          ></v-text-field>
+          
            </v-card-actions>
         </v-flex>
 

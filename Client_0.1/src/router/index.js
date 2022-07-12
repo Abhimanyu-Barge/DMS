@@ -7,7 +7,9 @@ import BasicLogin from '@/components/login/BasicLogin'
 import Dashboard from '@/components/dashboard/Dashboard'
 // Collection page 
 import collection  from '@/components/collection/Collection'
-
+import cattlefeed from '@/components/cattlefeed/Cattlefeed'
+import Advance from '@/components/advance/Advance'
+// DMS\Client_0.1\src.vue
 // User 
 import CreateUser from '@/components/user/CreateUser'
 import UserList from '@/components/user/UserList'
@@ -35,6 +37,16 @@ export default new Router({
         path:"/collection",
         name:"Collection",
         component:collection
+      },
+      {
+        path:"/cattlefeed",
+        name:"Cattlefeed",
+        component:cattlefeed
+      },
+      {
+        path:"/advance",
+        name:"Advance",
+        component:Advance
       },
       {
         path: '/create_user',

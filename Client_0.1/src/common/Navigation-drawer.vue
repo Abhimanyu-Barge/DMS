@@ -85,8 +85,18 @@ export default {
         },
          {
            icons:"play_for_work",
-           title:"Colllection",
+           title:"Milk Colllection",
            redirectTo:"/collection"
+         },
+          {
+           icons:"play_for_work",
+           title:"Cattle feed",
+           redirectTo:"/cattlefeed"
+         },
+          {
+           icons:"play_for_work",
+           title:"Advance",
+           redirectTo:"/advance"
          },
         {
           icons: "account_circle",
