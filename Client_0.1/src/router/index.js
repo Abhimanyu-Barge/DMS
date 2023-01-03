@@ -9,6 +9,7 @@ import Dashboard from '@/components/dashboard/Dashboard'
 import collection  from '@/components/collection/Collection'
 import cattlefeed from '@/components/cattlefeed/Cattlefeed'
 import Advance from '@/components/advance/Advance'
+import DataEntry from '@/components/dataEntry/dataEntry'
 // DMS\Client_0.1\src.vue
 // User 
 import CreateUser from '@/components/user/CreateUser'
@@ -42,6 +43,11 @@ export default new Router({
         path:"/cattlefeed",
         name:"Cattlefeed",
         component:cattlefeed
+      },
+      {
+        path:"/dataEntry",
+        name:"DataEntry",
+        component:DataEntry
       },
       {
         path:"/advance",
